@@ -80,7 +80,7 @@ jobs:
       - name: Package Jar ${{ matrix.java }}
         run: mvn clean package -D maven.compiler.source=${{ matrix.java }} -D 
           maven.compiler.target=${{ matrix.java }} -D maven.test.skip=true -D 
-          maven.site.skip=true
+          maven.site.skip=true source.skip=true
       - run: touch optcd-10.txt
       - name: Upload Package Results ${{ matrix.java }}
         uses: actions/upload-artifact@v5
